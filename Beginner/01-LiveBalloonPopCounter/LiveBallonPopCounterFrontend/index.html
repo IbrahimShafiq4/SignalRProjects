@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="light">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Live Balloon Pop Counter — Project 1</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400..800&family=Cairo:wght@300..900&display=swap"
+        rel="stylesheet" />
+
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+    <header class="topbar">
+        <div class="topbar__brand" data-i18n="brand">عداد فرقعة البالونات</div>
+        <div class="topbar__controls">
+            <button id="langToggle" class="pill-btn" aria-label="Toggle language">EN / AR</button>
+            <button id="themeToggle" class="pill-btn" aria-label="Toggle theme">🌙</button>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero__text">
+                <h1 data-i18n="heroTitle">عداد فرقعة البالونات — Live</h1>
+                <p class="hero__subtitle" data-i18n="heroSubtitle">
+                    كل واحد فاتح الصفحة بيفرقع بالونة، والعداد بيتحدث فورًا لكل الناس.
+                </p>
+                <button id="startBtn" class="cta" data-i18n="ctaStart">ابدأ الفرقعة</button>
+            </div>
+
+            <div class="hero__scene" aria-hidden="true">
+                <div class="balloon balloon--1"><span class="balloon__string"></span></div>
+                <div class="balloon balloon--2"><span class="balloon__string"></span></div>
+                <div class="balloon balloon--3"><span class="balloon__string"></span></div>
+                <div class="balloon balloon--4"><span class="balloon__string"></span></div>
+                <div class="balloon balloon--5"><span class="balloon__string"></span></div>
+                <div class="confetti confetti--1"></div>
+                <div class="confetti confetti--2"></div>
+                <div class="confetti confetti--3"></div>
+                <div class="confetti confetti--4"></div>
+                <div class="confetti confetti--5"></div>
+                <div class="confetti confetti--6"></div>
+            </div>
+        </section>
+
+        <section class="story">
+            <h2 data-i18n="whyTitle">ليه المشروع ده تحديدًا؟</h2>
+            <p data-i18n="whyBody1">
+                ده أول مشروع في السلسة الجديد، ولازم يكون أبسط حاجة ممكنة عشان دماغك تتعلم
+                الفكرة الأساسية لـ SignalR من غير أي تعقيد حواليها: حد بيعمل حدث،
+                السيرفر بياخده، وكل الناس التانيين بيشوفوا نتيجته على طول من غير ريفريش.
+            </p>
+            <p data-i18n="whyBody2">
+                الفكرة مستوحاة من عيد ميلاد حقيقي: تخيل إن في هدف مشترك — يوصل لـ 500
+                بالونة مفرقعة — وكل ضيف في الحفلة بيفرقع بالونات من موبايله، والعداد
+                بيتحرك قدام عين الكل في نفس اللحظة.
+            </p>
+        </section>
+    </main>
+
+    <script src="i18n.js"></script>
+    <script src="theme.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>

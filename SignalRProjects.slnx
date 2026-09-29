@@ -1,0 +1,6 @@
+<Solution>
+  <Folder Name="/Beginner/" />
+  <Folder Name="/Beginner/01-LiveBalloonPopCounter/">
+    <Project Path="Beginner/01-LiveBalloonPopCounter/LiveBalloonPopCounterAPI/LiveBalloonPopCounterAPI.csproj" />
+  </Folder>
+</Solution>

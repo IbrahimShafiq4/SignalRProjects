@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="light">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Balloon Pop Counter — Live</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400..800&family=Cairo:wght@300..900&display=swap"
+        rel="stylesheet" />
+
+    <link rel="stylesheet" href="app-styles.css" />
+</head>
+
+<body>
+
+    <div class="bg-decor" aria-hidden="true">
+        <span class="blob blob--1"></span>
+        <span class="blob blob--2"></span>
+        <span class="blob blob--3"></span>
+
+        <span class="bg-balloon bg-balloon--1"></span>
+        <span class="bg-balloon bg-balloon--2"></span>
+        <span class="bg-balloon bg-balloon--3"></span>
+        <span class="bg-balloon bg-balloon--4"></span>
+    </div>
+
+    <header class="app-topbar">
+        <a class="app-topbar__brand" href="index.html" data-i18n="brand">عداد فرقعة البالونات</a>
+
+        <div class="app-topbar__controls">
+            <span id="status" class="status" data-state="wait">بيتصل…</span>
+            <button id="langToggle" class="pill-btn" type="button" aria-label="Toggle language">EN / AR</button>
+            <button id="themeToggle" class="pill-btn" type="button" aria-label="Toggle theme">🌙</button>
+        </div>
+    </header>
+
+    <main class="counter-screen">
+        <section class="counter-card">
+
+            <p class="counter-card__eyebrow" data-i18n="goalLabel">الهدف المشترك</p>
+
+            <div class="counter-display">
+                <span id="counter" class="counter-display__value">0</span>
+                <span class="counter-display__slash">/</span>
+                <span id="goal" class="counter-display__goal">500</span>
+            </div>
+
+            <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="500" aria-valuenow="0">
+                <div id="progressFill" class="progress__fill"></div>
+            </div>
+
+            <button id="popBtn" class="pop-btn" type="button" data-i18n="popBtn">فرقع بالونة! 🎈</button>
+
+            <div id="celebration" class="celebration hidden" data-i18n="celebrationText">🎉 وصلنا للهدف! 🎉</div>
+        </section>
+    </main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/8.0.0/signalr.min.js"></script>
+<script type="module" src="dist/signalr-client.js"></script>
+
+    <script src="i18n.js"></script>
+    <script src="theme.js"></script>
+</body>
+
+</html>
