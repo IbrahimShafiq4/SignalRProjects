@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pop Quiz Buzzer Light - Project 2</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        (function () {
+            var t = localStorage.getItem("qb-theme");
+            if (!t) {
+                t = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+            }
+            document.documentElement.setAttribute("data-theme", t);
+        })();
+    </script>
+</head>
+
+<body data-lang="ar">
+
+    <header class="topbar">
+        <div class="topbar__brand" data-i18n="brand"> بازر الكويز </div>
+
+        <nav class="topbar__nav">
+            <a class="pill-btn" href="student.html" data-i18n="navStudent"> الطالب </a>
+            <a class="pill-btn" href="teacher.html" data-i18n="navTeacher"> المعلم </a>
+        </nav>
+
+        <div class="topbar__controls">
+            <button id="langToggle" class="pill-btn" aria-label="toggle Language"> EN / AR </button>
+            <button id="themeToggle" class="pill-btn" aria-label="Toggle theme"> 🌙 </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero__text">
+                <h1 data-i18n="heroTitle"> مين هيضغط الأول </h1>
+                <p class="hero__subtitle" data-i18n="heroSubtitle">
+                    المعلم بيسأل، والطلبة بيتسابقوا على البازر. السيرفر بيحدد مين ضغط
+                    الأول بدقة الميلي ثانية، وترتيب الكل بيظهر لحظيًا عند المعلم.
+                </p>
+
+                <button id="startBtn" class="cta" data-i18n="ctaStart">جرب البازر</button>
+            </div>
+            <div class="hero__scene" aria-hidden="true">
+                <div class="podium">
+                    <div class="buzzer">
+                        <div class="buzzer__glow"></div>
+                    </div>
+                    <div class="spotlight"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="story">
+            <h2 data-i18n="whyTitle"> ليه المشروع دا تحديدا ؟ </h2>
+            <p data-i18n="whyBody1">
+                في Project 1 كل الناس كانوا متساويين — كله بيفرقع بالونة والكل شايف
+                نفس الرقم. هنا أول مرة بيبقى فيه فرقين: طالب بيضغط، ومعلم بيراقب.
+                وأهم حاجة: السيرفر لازم "يحسم" مين فاز فعلًا لما اتنين يضغطوا في نفس
+                اللحظة تقريبًا — ده مفهوم جديد اسمه server-side locking.
+            </p>
+            <p data-i18n="whyBody2">
+                الفكرة من حصة مدرسية حقيقية: المعلم بيسأل سؤال، وكل الطلبة قاعدين
+                بموبايلاتهم مفتوح عندهم بازر كبير. أول واحد يضغط، السيرفر يقفل الجولة
+                فورًا لحد ما المعلم يعمل Reset لسؤال جديد.
+            </p>
+        </section>
+    </main>
+
+    <script src="./i18n.js"></script>
+    <script src="./theme.js"></script>
+    <script src="./app.js"></script>
+</body>
+
+</html>

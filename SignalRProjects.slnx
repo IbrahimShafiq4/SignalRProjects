@@ -3,4 +3,7 @@
   <Folder Name="/Beginner/01-LiveBalloonPopCounter/">
     <Project Path="Beginner/01-LiveBalloonPopCounter/LiveBalloonPopCounterAPI/LiveBalloonPopCounterAPI.csproj" />
   </Folder>
+  <Folder Name="/Beginner/02-RealTimeClassroom/">
+    <Project Path="Beginner/02-RealTimeClassroom/PopQuizBuzzer/PopQuizBuzzer.csproj" />
+  </Folder>
 </Solution>

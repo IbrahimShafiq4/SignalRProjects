@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student — Quiz Buzzer</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        (function () {
+            var t = localStorage.getItem("qb-theme") ||
+                (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+            document.documentElement.setAttribute("data-theme", t);
+        })();
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/8.0.0/signalr.min.js"></script>
+</head>
+
+<body data-lang="ar">
+    <header class="topbar">
+        <a class="topbar__brand" href="index.html" data-i18n="brand">بازر الكويز</a>
+        <div class="topbar__controls">
+            <button id="langToggle" class="pill-btn">EN / AR</button>
+            <button id="themeToggle" class="pill-btn">🌙</button>
+        </div>
+    </header>
+
+    <main class="student">
+        <h1 data-i18n="studentTitle">جاهز؟ اضغط البازر!</h1>
+        <button id="buzzerBtn" class="buzzer-btn">اضغط</button>
+        <p id="status" class="status" data-i18n="statusWaiting">في انتظار الاتصال...</p>
+    </main>
+
+    <script src="./i18n.js"></script>
+    <script src="./theme.js"></script>
+    <script type="module" src="./dist/student-client.js"></script>
+</body>
+
+</html>
