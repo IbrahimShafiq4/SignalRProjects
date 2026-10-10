@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عرض الألعاب النارية · Live Fireworks</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Anton&family=Cairo:wght@700;900&family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=Work+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+    <script type="importmap">
+    {
+      "imports": {
+        "@microsoft/signalr": "https://cdn.jsdelivr.net/npm/@microsoft/signalr@8/+esm"
+      }
+    }
+    </script>
+</head>
+
+<body data-role="connecting">
+
+    <div class="floating-controls">
+        <button id="langToggle" class="orb-btn" aria-label="تبديل اللغة">🌐</button>
+        <button id="themeToggle" class="orb-btn" aria-label="تبديل المظهر">🌓</button>
+    </div>
+
+    <main class="sky-stage">
+
+        <div class="sky-stage__sky" id="sk" aria-hidden="true">
+
+            <div class="stars" id="stars"></div>
+
+            <svg class="signal" viewBox="0 0 600 300" preserveAspectRatio="xMidYMax meet" aria-hidden="true">
+                <g fill="none" stroke="currentColor" stroke-width="1.2">
+                    <ellipse class="signal__wave signal__wave--1" cx="300" cy="300" rx="30" ry="10" />
+                    <ellipse class="signal__wave signal__wave--2" cx="300" cy="300" rx="90" ry="30" />
+                    <ellipse class="signal__wave signal__wave--3" cx="300" cy="300" rx="150" ry="50" />
+                    <ellipse class="signal__wave signal__wave--4" cx="300" cy="300" rx="210" ry="70" />
+                    <ellipse class="signal__wave signal__wave--5" cx="300" cy="300" rx="270" ry="90" />
+                </g>
+                <circle class="signal__source" cx="300" cy="300" r="3" />
+            </svg>
+
+            <svg class="decor decor--tr" viewBox="-50 -50 100 100" aria-hidden="true">
+                <g fill="none" stroke-linecap="round">
+                    <g class="decor__rays"></g>
+                    <circle class="decor__core" cx="0" cy="0" r="2.4" />
+                </g>
+            </svg>
+
+            <svg class="decor decor--tl" viewBox="-50 -50 100 100" aria-hidden="true">
+                <g fill="none" stroke-linecap="round">
+                    <g class="decor__rays"></g>
+                    <circle class="decor__core" cx="0" cy="0" r="2" />
+                </g>
+            </svg>
+
+            <svg class="city" viewBox="0 0 1440 260" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+                <defs>
+                    <linearGradient id="cityFill" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%" stop-color="#0a0518" />
+                        <stop offset="60%" stop-color="#07020f" />
+                        <stop offset="100%" stop-color="#030107" />
+                    </linearGradient>
+                </defs>
+
+                <g fill="url(#cityFill)" opacity="0.55">
+                    <rect x="40" y="140" width="46" height="120" />
+                    <rect x="98" y="110" width="30" height="150" />
+                    <rect x="140" y="150" width="58" height="110" />
+                    <rect x="210" y="180" width="90" height="80" />
+                    <rect x="1000" y="120" width="46" height="140" />
+                    <rect x="1056" y="150" width="80" height="110" />
+                    <rect x="1150" y="180" width="100" height="80" />
+                    <rect x="1350" y="130" width="46" height="130" />
+                </g>
+
+                <g fill="url(#cityFill)">
+                    <rect x="300" y="150" width="34" height="110" />
+                    <rect x="342" y="120" width="26" height="140" />
+                    <rect x="376" y="170" width="44" height="90" />
+
+                    <path d="M 470,260
+                             L 470,180
+                             Q 470,158 500,146
+                             Q 528,134 560,120
+                             Q 592,134 620,146
+                             Q 650,158 650,180
+                             L 650,260 Z" />
+                    <rect x="446" y="120" width="7" height="140" />
+                    <path d="M 446,120 Q 449.5,96 453,120 Z" />
+                    <rect x="668" y="120" width="7" height="140" />
+                    <path d="M 668,120 Q 671.5,96 675,120 Z" />
+
+                    <rect x="720" y="180" width="70" height="80" />
+                    <rect x="800" y="150" width="54" height="110" />
+                    <rect x="864" y="190" width="66" height="70" />
+
+                    <path d="M 960,260
+                             L 960,200
+                             Q 960,178 986,168
+                             Q 1012,178 1012,200
+                             L 1012,260 Z" />
+                </g>
+
+                <g class="city__windows">
+                </g>
+            </svg>
+
+        </div>
+
+        <div class="sky-stage__content">
+            <p class="live-badge">
+                <span class="live-dot" aria-hidden="true"></span>
+                <span data-i18n="liveBadge">يُبَث الآن</span>
+            </p>
+
+            <h1 data-i18n="heroTitle">FIREWORKS SHOW</h1>
+
+            <p class="lede" data-i18n="heroSubtitle">
+                واحد بس بيطلق، والكل شايف السما تنور في نفس اللحظة.
+            </p>
+        </div>
+
+        <div class="launch-pad">
+            <span id="roleLabel" class="role-label" data-i18n="roleConnecting">جارٍ الاتصال…</span>
+
+            <button id="launchBtn" class="launch-btn" type="button" aria-label="أطلق الألعاب النارية">
+                <span class="launch-btn__ring" aria-hidden="true"></span>
+                <span class="launch-btn__ring launch-btn__ring--2" aria-hidden="true"></span>
+                <span class="launch-btn__ring launch-btn__ring--3" aria-hidden="true"></span>
+                <span class="launch-btn__label" data-i18n="ctaStart">🚀 أطلق</span>
+            </button>
+        </div>
+
+    </main>
+
+    <section class="story">
+        <header class="story__head">
+            <p class="story__eyebrow" data-i18n="storyEyebrow">المشروع الثالث · SignalR</p>
+            <h2 data-i18n="whyTitle">ليه المشروع دا تحديدًا؟</h2>
+        </header>
+
+        <p data-i18n="whyBody1">
+            في المشروعين اللي فاتوا، أي حد متصل كان يقدر يبعت الحدث. هنا أول مرة
+            بيبقى فيه فرق: أول واحد يفتح الصفحة يبقى "المُطلق" (host)، والباقي
+            بس بيشوفوا. ده تمهيد بسيط لمفهوم الصلاحيات (roles) اللي هيكبر معانا
+            بعدين في المشاريع المتقدمة.
+        </p>
+        <p data-i18n="whyBody2">
+            الفكرة من عرض ألعاب نارية حقيقي: شخص واحد بيتحكم في زرار الإطلاق،
+            وكل الجمهور اللي واقف بعيد بيشوف نفس اللحظة بالظبط، من غير أي تأخير
+            محسوس بين شاشة وشاشة.
+        </p>
+    </section>
+
+    <script src="i18n.js"></script>
+    <script src="theme.js"></script>
+    <script type="module" src="fireworks-client.js"></script>
+</body>
+
+</html>

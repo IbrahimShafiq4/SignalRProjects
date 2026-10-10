@@ -1,0 +1,6 @@
+@FireworksShowAPI_HostAddress = http://localhost:5074
+
+GET {{FireworksShowAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
