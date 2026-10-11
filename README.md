@@ -26,9 +26,9 @@ All projects use **HttpOnly cookies with a refresh-token flow**. Tokens are **ne
 | # | Project | Status |
 |---|---------|--------|
 | 01 | [Live Balloon Pop Counter](./Beginner/01-LiveBalloonPopCounter): everyone pops balloons together toward a shared goal | Done |
-| 02 | Real-time Classroom "Pop Quiz" Buzzer Light | In progress |
-| 03 | Live Fireworks Show Trigger Board: one person launches, everyone sees it fire at once | Planned |
-| 04 | Real-time Shared Household Grocery List: items checked off live by everyone in the house | Planned |
+| 02 | Real-time Classroom "Pop Quiz" Buzzer Light | Done |
+| 03 | Live Fireworks Show Trigger Board: one person launches, everyone sees it fire at once | Done |
+| 04 | Real-time Shared Household Grocery List: items checked off live by everyone in the house | In progress |
 | 05 | Live "High Five" Wall: tap to send a virtual high five, animated across every screen | Planned |
 | 06 | Real-time Coffee Shop Order-Ready Buzzer Board | Planned |
 | 07 | Live Classroom Mood Check-in Board: students tap an emoji, the teacher sees the live mood spread | Planned |
